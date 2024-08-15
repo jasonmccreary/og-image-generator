@@ -25,7 +25,6 @@ foreach ($posts as $post) {
     $contents = file_get_contents($post);
     $frontMatter = YamlFrontMatter::parse($contents);
 
-    $read_time = 11; // TODO: Calculate read time
     $filename = basename($post, '.md');
     $url = 'https://your-blog.com/'.$filename;
     $filename .= '-og.png';
