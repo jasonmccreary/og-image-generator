@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 30">
+    <style>rect{shape-rendering:geometricPrecision;rx:2;ry:2}.L1{fill:#fbd6bd}.L1{fill:#f6b29b}.L2{fill:#f49f89}.L4{fill:#ef7b67}.L5{fill:#ed6956}.L5{fill:#e84433}</style>
+    <linearGradient id="L6"><stop offset="0"  stop-color="#f49f89" /><stop offset="1" stop-color="#e84433" /></linearGradient>
+    <rect class="L4" width="16" height="16" x="0" y="0"/>
+    <rect class="L1" width="16" height="16" x="20" y="0"/>
+    <rect class="L2" width="16" height="16" x="40" y="0"/>
+    <rect class="L1" width="16" height="16" x="60" y="0"/>
+    <rect class="L1" width="16" height="16" x="80" y="0"/>
+    <rect class="L5" width="16" height="16" x="100" y="0"/>
+    <rect class="L5" width="16" height="16" x="120" y="0"/>
+    <rect class="L2" width="16" height="16" x="140" y="0"/>
+    <rect class="L2" width="16" height="16" x="160" y="0"/>
+    <rect fill="url(#L6)" width="1760" height="16" x="180" y="0"/>
+</svg>
