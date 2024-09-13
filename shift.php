@@ -40,6 +40,8 @@ foreach ($posts as $post) {
         ->title(substr($frontMatter->title, 0, 20))
         ->save($argv[2].$filename);
 
+    exit;
+
     if ($frontMatter->matter('og_image')) {
         $contents = preg_replace(
             '/og_image: (\S+)/',

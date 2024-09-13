@@ -12,11 +12,11 @@ class ShiftLayout extends AbstractLayout
 {
     protected BorderPosition $borderPosition = BorderPosition::None;
 
-    protected int $borderWidth = 25;
+    protected int $borderWidth = 0;
 
     protected int $height = 640;
 
-    protected int $padding = 20;
+    protected int $padding = 10;
 
     protected int $width = 1280;
 
@@ -36,19 +36,6 @@ class ShiftLayout extends AbstractLayout
         );
 
         $this->addFeature((new TextBox)
-            ->name('title')
-            ->text($this->title())
-            ->color($this->config->theme->getTitleColor())
-            ->font($this->config->theme->getTitleFont())
-            ->size(60)
-            ->box($this->mountArea()->box->width(), 400)
-            ->position(
-                x: 0,
-                y: 60,
-            )
-        );
-
-        $this->addFeature((new TextBox)
             ->name('category')
             ->text($this->category())
             ->color($this->config->theme->getUrlColor())
@@ -57,8 +44,21 @@ class ShiftLayout extends AbstractLayout
             ->box(300, 45)
             ->position(
                 x: 0,
+                y: 60,
+            )
+        );
+
+        $this->addFeature((new TextBox)
+            ->name('title')
+            ->text($this->title())
+            ->color($this->config->theme->getTitleColor())
+            ->font($this->config->theme->getTitleFont())
+            ->size(60)
+            ->box($this->mountArea()->box->width(), 400)
+            ->position(
+                x: 0,
                 y: 20,
-                relativeTo: fn () => $this->getFeature('title')->anchor(Position::BottomLeft),
+                relativeTo: fn () => $this->getFeature('category')->anchor(Position::BottomLeft)
             )
         );
 
@@ -71,9 +71,9 @@ class ShiftLayout extends AbstractLayout
                 ->size(20)
                 ->box(300, 45)
                 ->position(
-                    x: 30,
-                    y: 0,
-                    relativeTo: fn () => $this->getFeature('category')->anchor(Position::TopRight)
+                    x: 0,
+                    y: 20,
+                    relativeTo: fn () => $this->getFeature('title')->anchor(Position::BottomLeft)
                 )
             );
         }
@@ -87,8 +87,9 @@ class ShiftLayout extends AbstractLayout
             ->box($this->mountArea()->box->width(), 45)
             ->position(
                 x: 0,
-                y: 20,
-                relativeTo: fn () => $this->mountArea()->anchor(),
+                y: 0,
+                relativeTo: fn () => $this->mountArea()->anchor(Position::BottomLeft),
+                anchor: Position::BottomLeft
             )
         );
 
